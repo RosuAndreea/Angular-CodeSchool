@@ -2,18 +2,28 @@
 <html ng-app="gemStore">
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" src="style.css">
         <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <script type="text/javascript" src="app.js"></script>
     </head>
-    <body class="container" ng-controller = "StoreController as store">
-
-        <div class="product row"  ng-repeat = "product in store.products">
-            <h3>
-                {{ product.name }}       
-                <em class="pull-right"> ${{ product.price }} </em>
-            </h3>
-            <!-- <button ng-show = "store.product.canPurchase">Add to Cart</button> -->
+    <body ng-controller="StoreController as store">
+        <!--  Products Container  -->
+        <div class="list-group">
+            <!--  Product Container  -->
+            <div class="list-group-item" ng-repeat="product in store.products">
+                <h3>
+                    {{product.name}}
+                    <em class="pull-right">{{product.price | currency}}</em>
+                </h3>
+                <!-- Image Gallery  -->
+                <div class="gallery" ng-show = "product.images.length > 0">
+                    <h4>{{product.description}}</h4>
+                    <img class="img img-circle img-thumbnail center-block" ng-src="{{product.images[0]}}" />
+                    <ul class="clearfix">
+                        <li class="small-image pull-left thumbnail" ng-repeat="image in product.images"> <img ng-src="{{image}}" /> </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        
     </body>
 </html>
