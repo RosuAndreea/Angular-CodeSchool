@@ -64,7 +64,7 @@
         images: [
           "images/gem-06.jpg",
           "images/gem-07.jpg",
-          "images/gem-10.jpg"
+          "images/gem-08.jpg"
         ],
         reviews: [{
           stars: 1,

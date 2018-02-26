@@ -2,11 +2,12 @@
 <html ng-app="gemStore">
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" src="style.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
         <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <script type="text/javascript" src="app.js"></script>
     </head>
     <body ng-controller="StoreController as store">
+        <h1 class="page-title">An Angular Store</h1>
         <!--  Products Container  -->
         <div class="list-group">
             <!--  Product Container  -->
@@ -20,7 +21,9 @@
                     <h4>{{product.description}}</h4>
                     <img class="img img-circle img-thumbnail center-block" ng-src="{{product.images[0]}}" />
                     <ul class="clearfix">
-                        <li class="small-image pull-left thumbnail" ng-repeat="image in product.images"> <img ng-src="{{image}}" /> </li>
+                        <li class="small-image pull-left thumbnail" ng-repeat="image in product.images"> 
+                            <img ng-src="{{image}}" /> 
+                        </li>
                     </ul>
                 </div>
             </div>
