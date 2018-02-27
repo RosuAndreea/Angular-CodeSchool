@@ -18,7 +18,9 @@
                 </h3>
                 <!-- Image Gallery  -->
                 <section class="gallery" ng-show = "product.images.length" ng-controller = "GalleryController as gallery">
-                    <img class="img img-circle img-thumbnail center-block" ng-src="{{product.images[gallery.current]}}" />
+                    <div class = "full-img">
+                        <img class="img img-circle img-thumbnail center-block" ng-src="{{product.images[gallery.current]}}" />
+                    </div>
                     <ul class="clearfix list-inline thumbs">
                         <li class="small-image pull-left thumbnail" ng-repeat="image in product.images"> 
                             <img ng-src="{{image}}" /> 
