@@ -36,11 +36,17 @@
 .nav-pills li {
     margin: 0 12px 12px 12px;
 }
-.active{
-    background: #CDCDCD;
-}
 .full-img {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+select.form-control:not([size]):not([multiple]) {
+    height: calc(2.25rem + 7px);
+}
+.ng-invalid.ng-dirty {
+    border-color: red;
+}
+.ng-valid.ng-dirty {
+    border-color: green;
 }
