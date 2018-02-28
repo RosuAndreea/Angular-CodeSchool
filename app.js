@@ -5,10 +5,9 @@
 		var store = this;
 		store.products = [];
 
-		$http.get('store-products.json').then(function(data){
-			store.products = data;
+		$http.get('store-products.json').then(function(res){
+        	store.products = res.data;
 		});
-	
 	}]);
 	
 	app.controller("ReviewController", function(){
@@ -19,6 +18,5 @@
 			this.review = {};
 		};
 	});
-
 
 })();
